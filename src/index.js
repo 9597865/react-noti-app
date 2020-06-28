@@ -7,9 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import store from "./store";
 
-import { countAddAction } from "./actions/counter_action";
 
-store.dispatch(countAddAction);
 
 ReactDOM.render(
   // <React.StrictMode>
