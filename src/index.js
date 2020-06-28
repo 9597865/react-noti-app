@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -7,19 +8,15 @@ import * as serviceWorker from "./serviceWorker";
 import store from "./store";
 
 import { countAddAction } from "./actions/counter_action";
-import { loadPostsAction } from "./actions/post_action";
-
-console.log(store);
-console.log(store.getState());
 
 store.dispatch(countAddAction);
-store.dispatch(countAddAction);
-store.dispatch(loadPostsAction);
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
+  // </React.StrictMode>,
   document.getElementById("root")
 );
 
